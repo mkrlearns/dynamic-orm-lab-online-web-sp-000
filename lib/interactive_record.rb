@@ -12,7 +12,7 @@ class InteractiveRecord
     col_names.compact
   end
 
-  def initialize(options={}) options.each { |property, value| self.send("#{property}=", value) } end
+  def initialize(options={}) options.each { |prop, val| self.send("#{prop}=", val) } end
 
   def save
     DB[:conn].execute("INSERT INTO #{table_name_for_insert} (#{col_names_for_insert}) VALUES (#{values_for_insert})")

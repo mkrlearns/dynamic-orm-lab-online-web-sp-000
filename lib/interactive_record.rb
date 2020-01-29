@@ -33,4 +33,8 @@ class InteractiveRecord
 
   def col_names_for_insert() self.class.column_names.delete_if {|col| col == "id"}.join(", ") end
 
+  def self.find_by_name(name)
+    DB[:conn].execute("SELECT * FROM #{self.table_name} WHERE name = ?", name)
+  end
+
 end

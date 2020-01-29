@@ -38,7 +38,7 @@ class InteractiveRecord
   end
 
   def self.find_by(query)
-    puts query[query.keys[0]]
+    puts query[query.keys]
     puts query.values
     DB[:conn].execute("SELECT * FROM #{self.table_name} WHERE ? = ?", query.keys[0].to_sym, query.values[0])
   end

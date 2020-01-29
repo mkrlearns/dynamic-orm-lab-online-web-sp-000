@@ -37,8 +37,8 @@ class InteractiveRecord
     DB[:conn].execute("SELECT * FROM #{self.table_name} WHERE name = ?", name)
   end
 
-  def self.find_by(query)
-    DB[:conn].execute("SELECT * FROM #{self.table_name} WHERE ? = ? LIMIT 1", query[query.keys[0]], query.values[0])
+  def self.find_by(x)
+    DB[:conn].execute("SELECT * FROM #{self.table_name} WHERE ? = ? LIMIT 1", x[x.keys[0]], x.values[0])
   end
 
 end

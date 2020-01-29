@@ -39,4 +39,6 @@ class InteractiveRecord
 
   def self.find_by(attribute)
 
+  end
+
 end
